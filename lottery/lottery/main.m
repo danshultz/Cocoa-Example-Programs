@@ -15,17 +15,19 @@ int main (int argc, const char * argv[])
     
     NSMutableArray *entries = [[NSMutableArray alloc] init];
     NSDate *now = [[NSDate alloc] init];
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *weekComponents = [[NSDateComponents alloc] init];
-    
     srandom((unsigned)time(NULL));
     
     for(int i = 0; i < 10; i++) 
     {
-      [weekComponents setWeek:i];
-      NSDate *date = [calendar dateByAddingComponents:weekComponents toDate:now options:0];
+      NSTimeInterval days = 60 * 60 * 24 * i;
+      NSDate *date = [now dateByAddingTimeInterval: days];
+      
       LotteryEntry *entry = [[LotteryEntry alloc] initWithEntryDate:date];
       [entries addObject:entry];
+    }
+    
+    for(id entry in entries)
+    {
       NSLog(@"Entry - %@", entry);
     }
   }
