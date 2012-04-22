@@ -24,12 +24,17 @@ int main (int argc, const char * argv[])
       
       LotteryEntry *entry = [[LotteryEntry alloc] initWithEntryDate:date];
       [entries addObject:entry];
+      
+      [entry release];
     }
     
     for(id entry in entries)
     {
       NSLog(@"Entry - %@", entry);
     }
+    
+    [entries release];
+    [now release];
   }
     return 0;
 }

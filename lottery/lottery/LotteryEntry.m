@@ -21,15 +21,24 @@
   self = [super init];
   if(self) 
   {
-    entryDate = date;
+    [self setEntryDate: date];
     firstNumber = ((int)random() % 100) + 1;
     secondNumber = ((int)random() % 100) + 1;
   }
   return self;
 }
 
+- (void)dealloc
+{
+  NSLog(@"Deallocating %@", self);
+  [entryDate release];
+  [super dealloc];
+}
+
 - (void)setEntryDate:(NSDate *)date
 {
+  [date retain];
+  [entryDate release];
   entryDate = date;
 }
 
@@ -53,10 +62,10 @@
   NSDateFormatter *df = [[NSDateFormatter alloc]init];
   [df setTimeStyle:NSDateFormatterNoStyle];
   [df setDateStyle:NSDateFormatterFullStyle];
-  NSString *result = [[NSString alloc] initWithFormat:@"%@ = %d and %d",
+  [df autorelease];
+  return [NSString stringWithFormat:@"%@ = %d and %d",
                       [df stringFromDate:entryDate],
                       firstNumber, secondNumber];
-  return result;
 }
 
 @end

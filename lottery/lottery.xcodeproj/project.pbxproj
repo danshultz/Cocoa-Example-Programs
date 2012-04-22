@@ -32,7 +32,7 @@
 		8733AFC91543878300F408B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8733AFCC1543878300F408B2 /* lottery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lottery-Prefix.pch"; sourceTree = "<group>"; };
 		8733AFCD1543878300F408B2 /* lottery.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = lottery.1; sourceTree = "<group>"; };
-		8733AFD4154387BB00F408B2 /* LotteryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; path = LotteryEntry.h; sourceTree = "<group>"; };
+		8733AFD4154387BB00F408B2 /* LotteryEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotteryEntry.h; sourceTree = "<group>"; };
 		8733AFD5154387BB00F408B2 /* LotteryEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotteryEntry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +202,7 @@
 		8733AFD21543878300F408B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lottery/lottery-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -211,6 +212,7 @@
 		8733AFD31543878300F408B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "lottery/lottery-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -236,6 +238,7 @@
 				8733AFD31543878300F408B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
